@@ -14,7 +14,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<PhotoContainer />}>
-          <Route path=":topic" element={<PhotoContainer />} />
+          <Route path=":topic" element={<PhotoContainer 
+            apiKey={apiKey}
+          />} />
         </Route>
       </Routes>
     </div>
