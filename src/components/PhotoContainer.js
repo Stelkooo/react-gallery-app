@@ -1,6 +1,6 @@
 import React from "react";
 
-const PhotoContainer = () => {
+const PhotoContainer = ({ apiKey }) => {
     return (
         <div className="photo-container">
             <h2>Results</h2>
