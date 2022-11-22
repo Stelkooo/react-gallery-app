@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import apiKey from "./config";
 
 // App Components
 import Nav from "./components/Nav";
@@ -14,9 +13,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<PhotoContainer />}>
-          <Route path=":topic" element={<PhotoContainer 
-            apiKey={apiKey}
-          />} />
+          <Route path=":topic" element={<PhotoContainer />} />
         </Route>
       </Routes>
     </div>
