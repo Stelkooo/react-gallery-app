@@ -8,14 +8,15 @@ import NotFound from "./NotFound";
 
 const PhotoContainer = () => {
     const [photos, setPhotos] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { topic } = useParams();
 
     const performSearch = (topic) => {
         return axios({
-                url: `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${topic}&per_page=24&format=json&nojsoncallback=1`,
-                method: "get",
-                timeout: 8000
-            })
+            url: `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${topic}&per_page=24&format=json&nojsoncallback=1`,
+            method: "get",
+            timeout: 8000
+        })
             .then(res => {
                 setPhotos(
                     res.data.photos.photo.map(photo => {
@@ -25,6 +26,7 @@ const PhotoContainer = () => {
                         />
                     })
                 )
+                setLoading(false);
             })
             .catch(err => {
                 console.log(err);
@@ -37,13 +39,10 @@ const PhotoContainer = () => {
 
     return (
         <div className="photo-container">
-            {
-                photos.length !== 0 ? <h2>Results</h2> : null
-            }
+            {loading ? <h2>Loading...</h2> : null}
+            {photos.length !== 0 ? <h2>Results</h2> : null}
             <ul>
-                {
-                    photos.length !== 0 ? photos : <NotFound />
-                }
+                {photos.length !== 0 ? photos : loading ? null : <NotFound />}
             </ul>
         </div>
     );
