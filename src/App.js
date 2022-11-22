@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import PhotoContainer from "./components/PhotoContainer";
 import SearchForm from "./components/SearchForm";
+import RouteNotFound from "./components/RouteNotFound";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<PhotoContainer />}>
           <Route path=":topic" element={<PhotoContainer />} />
         </Route>
+        <Route path="*" element={<RouteNotFound />} />
       </Routes>
     </div>
   );
