@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Routes, Route } from "react-router-dom";
 import apiKey from "./config";
 
 // App Components
@@ -12,7 +12,11 @@ function App() {
     <div className="container">
       <SearchForm />
       <Nav />
-      <PhotoContainer />
+      <Routes>
+        <Route path="/" element={<PhotoContainer />}>
+          <Route path=":topic" element={<PhotoContainer />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
