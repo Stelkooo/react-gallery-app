@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 import apiKey from "../config";
 
 import Photo from "./Photo";
+import NotFound from "./NotFound";
 
 const PhotoContainer = () => {
-    const [photos, setPhotos] = useState();
+    const [photos, setPhotos] = useState([]);
     const { topic } = useParams();
 
     const performSearch = (topic) => {
@@ -31,20 +32,18 @@ const PhotoContainer = () => {
     }
 
     useEffect(() => {
-        performSearch(topic);
-        // console.log(photos);
+        topic ? performSearch(topic) : performSearch("cats%2Cdogs%2Cbirds");
     }, [topic])
 
     return (
         <div className="photo-container">
-            <h2>Results</h2>
+            {
+                photos.length !== 0 ? <h2>Results</h2> : null
+            }
             <ul>
-                {photos}
-                {/* Not found */}
-                <li className="not-found">
-                    <h3>No Results Found</h3>
-                    <p>You search did not return any results. Please try again.</p>
-                </li>
+                {
+                    photos.length !== 0 ? photos : <NotFound />
+                }
             </ul>
         </div>
     );
