@@ -8,7 +8,7 @@ const SearchForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let submittedTopic = topic.current.value;
-        let path = `${submittedTopic}`;
+        let path = `search/${submittedTopic}`;
         navigate(path);
     }
 

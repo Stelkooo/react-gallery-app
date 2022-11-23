@@ -6,10 +6,11 @@ import apiKey from "../config";
 import Photo from "./Photo";
 import NotFound from "./NotFound";
 
-const PhotoContainer = () => {
+const PhotoContainer = ({ defaultTopic }) => {
     const [photos, setPhotos] = useState([]);
     const [loading, setLoading] = useState(true);
     const { topic } = useParams();
+    const topicToFetch = topic ? topic : defaultTopic;
 
     const performSearch = (topic) => {
         return axios({
@@ -34,8 +35,8 @@ const PhotoContainer = () => {
     }
 
     useEffect(() => {
-        topic ? performSearch(topic) : performSearch("cats%2Cdogs%2Cbirds");
-    }, [topic])
+        topicToFetch ? performSearch(topicToFetch) : performSearch("cats%2Cdogs%2Cbirds");
+    }, [topicToFetch])
 
     return (
         <div className="photo-container">

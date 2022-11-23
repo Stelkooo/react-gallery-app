@@ -13,9 +13,11 @@ function App() {
       <SearchForm />
       <Nav />
       <Routes>
-        <Route path="/" element={<PhotoContainer />}>
-          <Route path=":topic" element={<PhotoContainer />} />
-        </Route>
+        <Route path="/" element={<PhotoContainer />} />
+        <Route path="cats" element={<PhotoContainer defaultTopic={"cats"}/>} />
+        <Route path="dogs" element={<PhotoContainer defaultTopic={"dogs"}/>} />
+        <Route path="birds" element={<PhotoContainer defaultTopic={"birds"}/>} />
+        <Route path="search/:topic" element={<PhotoContainer />} />
         <Route path="*" element={<RouteNotFound />} />
       </Routes>
     </div>
