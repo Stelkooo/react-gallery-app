@@ -33,7 +33,7 @@ const App = () => {
       <Nav />
       <Routes>
         <Route
-          path='/'
+          path='react-gallery-app'
           element={
             <PhotoContainer
               getPhotos={performSearch}
@@ -43,7 +43,7 @@ const App = () => {
           }
         />
         <Route
-          path='cats'
+          path='react-gallery-app/cats'
           element={
             <PhotoContainer
               defaultTopic={'cats'}
@@ -54,7 +54,7 @@ const App = () => {
           }
         />
         <Route
-          path='dogs'
+          path='react-gallery-app/dogs'
           element={
             <PhotoContainer
               defaultTopic={'dogs'}
@@ -65,7 +65,7 @@ const App = () => {
           }
         />
         <Route
-          path='birds'
+          path='react-gallery-app/birds'
           element={
             <PhotoContainer
               defaultTopic={'birds'}
@@ -76,7 +76,7 @@ const App = () => {
           }
         />
         <Route
-          path='search/:topic'
+          path='react-gallery-app/search/:topic'
           element={
             <PhotoContainer
               getPhotos={performSearch}
@@ -86,7 +86,7 @@ const App = () => {
           }
         />
         <Route
-          path='*'
+          path='react-gallery-app/*'
           element={<RouteNotFound />}
         />
       </Routes>
