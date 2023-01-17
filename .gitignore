@@ -26,4 +26,5 @@ yarn-error.log*
 /react_gallery_app-v1
 
 # api
-/src/config.js
+.env
+
