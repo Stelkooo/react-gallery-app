@@ -1,7 +1,3 @@
-# React Gallery App
-
-![Screenshot of site](https://github.com/Stelkooo/react-gallery-app/blob/main/public/reactGalleryAppScreenshot.png)
-
 <a name="readme-top"></a>
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
