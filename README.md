@@ -51,7 +51,7 @@ This project is hosted on GitHub using gh-pages.
 
 ## Contact
 
-Your Name - [Stilyan Toskov](https://linkedin.com/in/stilyan-toskov) - stilyanmtoskov@gmail.com
+[Stilyan Toskov](https://linkedin.com/in/stilyan-toskov) - stilyanmtoskov@gmail.com
 
 Project Link: [https://github.com/Stelkooo/react-gallery-app](https://github.com/Stelkooo/react-gallery-app)
 
